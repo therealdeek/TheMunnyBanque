@@ -6,12 +6,12 @@ public class eliteMember extends acctInfo
 
 
     public eliteMember(String fName, String lName, String emailAddress,
-                       int acctNum, int phoneNum, long acctBalance,
+                       int acctNum, int phoneNum, long initialBalance,
                        int eliteMbrPts, int eliteLoanDiscount,
                        int eliteTravelMiles, String eliteAmmenity1,
                        String eliteAmmenity2)
     {
-        super(fName, lName, emailAddress, acctNum, phoneNum, acctBalance);
+        super(fName, lName, emailAddress, acctNum, phoneNum, initialBalance);
 
         membershipPoints = eliteMbrPts;
         loanDiscount = eliteLoanDiscount;

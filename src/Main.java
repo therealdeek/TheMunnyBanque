@@ -64,12 +64,8 @@ class acctInfo
 
 }
 
-class checkingAcct extends acctInfo // each member can make deposits/withdrawals
+class checkingAcct
 {
-    public checkingAcct(String fName, String lName, String emailAddress, int acctNum, int phoneNum) {
-        super(fName, lName, emailAddress, acctNum, phoneNum);
-    }
-
     public void deposit(long amount)
     {
         balance += amount;
@@ -79,16 +75,10 @@ class checkingAcct extends acctInfo // each member can make deposits/withdrawals
     {
         balance -= amount;
     }
-
 }
 
-class loanAcct extends acctInfo // each can take out a loan
+class loanAcct
 {
-
-    public loanAcct(String fName, String lName, String emailAddress, int acctNum, int phoneNum) {
-        super(fName, lName, emailAddress, acctNum, phoneNum);
-    }
-
     public void payEMI(long amount)
     {
         balance -= amount;

@@ -18,8 +18,9 @@ to show an updated account.
 
 class acctInfo
 {
-    String fName, lName, emailAddress;
-    int acctNum, phoneNum;
+    private String fName, lName, emailAddress;
+    private int acctNum, phoneNum;
+    protected long balance;
 
     public acctInfo(String fName, String lName, String emailAddress,
                     int acctNum, int phoneNum)
@@ -29,48 +30,78 @@ class acctInfo
         this.emailAddress = emailAddress;
         this.acctNum = acctNum;
         this.phoneNum = phoneNum;
+        balance = 0;
 
     }
 
-    public String getfName() {
-        return fName;
+    public void setfName(String fName) {this.fName = fName;}
+
+    public String getfName() {return fName;}
+
+    public void setlName(String lName) {this.lName = lName;}
+
+    public String getlName() {return lName;}
+
+    public void setEmailAddress(String emailAddress) {this.emailAddress = emailAddress;}
+
+    public String getEmailAddress() {return emailAddress;}
+
+    public void setAcctNum(int acctNum) {this.acctNum = acctNum;}
+
+    public int getAcctNum() {return acctNum;}
+
+    public void setPhoneNum(int phoneNum) {this.phoneNum = phoneNum;}
+
+    public int getPhoneNum() {return phoneNum;}
+
+    public long getBalance() {return balance;}
+
+    @Override
+    public String toString()
+    {
+        return lName+", "+ fName + " | "+ emailAddress+ " | "+ balance;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+}
+
+class checkingAcct extends acctInfo // each member can make deposits/withdrawals
+{
+    public checkingAcct(String fName, String lName, String emailAddress, int acctNum, int phoneNum) {
+        super(fName, lName, emailAddress, acctNum, phoneNum);
     }
 
-    public String getlName() {
-        return lName;
+    public void deposit(long amount)
+    {
+        balance += amount;
     }
 
-    public void setlName(String lName) {
-        this.lName = lName;
+    public void withdraw(long amount)
+    {
+        balance -= amount;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
+}
+
+class loanAcct extends acctInfo // each can take out a loan
+{
+
+    public loanAcct(String fName, String lName, String emailAddress, int acctNum, int phoneNum) {
+        super(fName, lName, emailAddress, acctNum, phoneNum);
     }
 
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+    public void payEMI(long amount)
+    {
+        balance -= amount;
     }
 
-    public int getAcctNum() {
-        return acctNum;
+    public void repay(long amount)
+    {
+        if(balance == amount)
+        {
+            balance = 0;
+        }
     }
 
-    public void setAcctNum(int acctNum) {
-        this.acctNum = acctNum;
-    }
-
-    public int getPhoneNum() {
-        return phoneNum;
-    }
-
-    public void setPhoneNum(int phoneNum) {
-        this.phoneNum = phoneNum;
-    }
 }
 
 public class Main

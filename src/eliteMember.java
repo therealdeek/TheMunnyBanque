@@ -5,13 +5,13 @@ public class eliteMember extends acctInfo
     private String ammenityAccess1, ammenityAccess2;
 
 
-    public eliteMember(String fName, String lName, String emailAddress,
+    public eliteMember(String fName, String lName, String userID,
                        int acctNum, int phoneNum, long initialBalance,
                        int eliteMbrPts, int eliteLoanDiscount,
                        int eliteTravelMiles, String eliteAmmenity1,
                        String eliteAmmenity2)
     {
-        super(fName, lName, emailAddress, acctNum, phoneNum, initialBalance);
+        super(fName, lName, userID, acctNum, phoneNum, initialBalance);
 
         membershipPoints = eliteMbrPts;
         loanDiscount = eliteLoanDiscount;

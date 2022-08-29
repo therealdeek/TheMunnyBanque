@@ -4,12 +4,12 @@ public class premiumMember extends acctInfo
     private String ammenityAccess1;
 
 
-    public premiumMember(String fName, String lName, String emailAddress,
+    public premiumMember(String fName, String lName, String userID,
                          int acctNum, int phoneNum, long initialBalance,
                          int premiumMbrPoints, int premiumLoanDiscount,
                          String premiumAmmenity1)
     {
-        super(fName, lName, emailAddress, acctNum, phoneNum, initialBalance);
+        super(fName, lName, userID, acctNum, phoneNum, initialBalance);
         membershipPoints = premiumMbrPoints;
         loanDiscount = premiumLoanDiscount;
         ammenityAccess1 = premiumAmmenity1;

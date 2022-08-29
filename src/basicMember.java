@@ -5,11 +5,11 @@ should resemble this with a few exceptions for elevated memberships.
 
 public class basicMember extends acctInfo
 {
-    public basicMember(String fName, String lName, String emailAddress,
+    public basicMember(String fName, String lName, String userID,
                        int acctNum, int phoneNum, long initialBalance)
 
     {
-        super(fName, lName, emailAddress, acctNum, phoneNum, initialBalance);
+        super(fName, lName, userID, acctNum, phoneNum, initialBalance);
     }
 
     @Override
